@@ -3,6 +3,8 @@ const { getPlatformInfo } = require("./core/dclient")
 const { spawn } = require("child_process")
 const http = require("http")
 
+const { execSync } = require('child_process')
+execSync('npm install chrono-node node-cron later', { stdio: 'inherit' })
 const run = async () => {
   try {
     const platform = getPlatformInfo?.().platform?.toLowerCase() || ""
